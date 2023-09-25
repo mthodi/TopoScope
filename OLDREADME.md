@@ -27,7 +27,6 @@ __Install Python dependencies__
 
 ```sh
 $ pip install --user -r requirements.txt
-
 ```
 
 __Download AS to Organization Mapping Dataset from CAIDA__
@@ -46,7 +45,28 @@ http://data.caida.org/datasets/routing/routeviews-prefix2as/
 
 __Prepare BGP paths __
 
-Use BGP RIB dumps to prepare BGP dumps. I used PCH, RIPE RIS and RouteViews.
+
+You can prepare BGP paths from [BGPStream](https://bgpstream.caida.org/) or download rib file from [Route Views](http://archive.routeviews.org/) and [RIS](http://data.ris.ripe.net/). 
+
+Noting that TopoScope only use IPv4 AS paths. Here is an example to extract AS paths from rib file:
+
+```sh
+prefix = re.search(r'PREFIX: ([^\n]*)\n', block).group(1).strip()
+if prefix:
+    aspath = re.search(r'ASPATH: ([^\n]*)\n', block).group(1).strip()
+    if '{' in aspath or '(' in aspath:
+        continue
+    if ":" not in temp_prefix:
+        output.append(aspath.replace(' ', '|'))
+        #output.append(aspath.replace(' ', '|') + '&' + prefix) -->
+
+
+__Prepare BGP paths from Isolario__
+
+You can download rib file and extract AS paths from [Isolario](https://www.isolario.it/Isolario_MRT_data/).
+
+Noting that Isolario data is only used for hidden link inference in the IMC paper. But you can also use it for basic inference by yourself. 
+
 
 ### Basic inference
 
@@ -137,6 +157,10 @@ __Example__
 
 You can download AS relationship inference result form 2017 to 2019 in /asrel/.
 
-## Contact
-You can contact me at thdmar002[at]myuct.ac.za if you have any questions.
+## Contact 
 
+You can contact us at <jinzt19@mails.tsinghua.edu.cn>.
+
+## Monthly inferred results
+
+We will update them later.
