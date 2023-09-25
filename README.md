@@ -1,6 +1,6 @@
 # Toposcope
 
-This is the code for the paper:
+This is code for the paper:
 
 ```bash
 @inproceedings{toposcope,
@@ -11,10 +11,10 @@ This is the code for the paper:
 }
  ```
 
- The source code was originally forked from this To get started using TopoScope, clone or download this [Toposcope](https://github.com/Zitong-Jin/TopoScope) by Ziton Jin.
+ The source code was originally forked from the [Toposcope Repository](https://github.com/Zitong-Jin/TopoScope) by Ziton Jin.
 
 
-I am maintaining this repository for my own research purpose, making modifications as needed.
+I am maintaining this repository for my own research purposes, making modifications as needed.
 
 ## What is TopoScope?
 
@@ -132,10 +132,6 @@ __Output data format__
 \<provider-as\>|\<customer-as\>|-1 
 
 \<peer-as\>|\<peer-as\>|0 
-
-__Example__
-
-You can download AS relationship inference result form 2017 to 2019 in /asrel/.
 
 ## Contact
 You can contact me at thdmar002[at]myuct.ac.za if you have any questions.
