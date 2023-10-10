@@ -136,7 +136,7 @@ class Links(object):
     def extractSiblings(self):
         formatCounter = 0
         orgAsn = defaultdict(list)
-        with open(self.org_name) as f:
+        with open(self.org_name, encoding='utf-8') as f:
             for line in f:
                 if formatCounter == 2:
                     asn = line.split('|')[0]

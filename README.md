@@ -13,7 +13,6 @@ This is code for the paper:
 
  The source code was originally forked from the [Toposcope Repository](https://github.com/Zitong-Jin/TopoScope) by Ziton Jin.
 
-
 I am maintaining this repository for my own research purposes, making modifications as needed.
 
 ## What is TopoScope?
@@ -21,7 +20,18 @@ I am maintaining this repository for my own research purposes, making modificati
 TopoScope is an AS relationship inference algorithm that combines ensemble learning and Bayesian networks. In addition, TopoScope also supports hidden link inference. You can learn more about TopoScope in IMC 2020.
 
 ## Quickstart
-TopoScope runs with python 3.6.8
+TopoScope runs with python 3.6.8. 
+To ensure future reproducibility, 
+I am using docker on Ubuntu 18.04 to be able to 
+run the code in an older version of Python that it was written in.
+
+### Run the code in a docker container
+
+```sh
+$ docker build -t research/toposcope .
+$ docker run -it --rm -v $(pwd):/app -w /app research/toposcope bash
+```
+
 
 __Install Python dependencies__
 
