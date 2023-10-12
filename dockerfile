@@ -1,4 +1,4 @@
-# Use Ubuntu 20.04 as the base image
+# Use Ubuntu 18.04 as the base image
 FROM ubuntu:18.04
 
 # Update the package list and install Python and pip
