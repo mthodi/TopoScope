@@ -32,6 +32,10 @@ $ docker build -t research/toposcope .
 $ docker run -it --rm -v $(pwd):/app -w /app research/toposcope bash
 ```
 
+I use the `clean_paths_parallel.sh` script to clean 
+the AS paths in parallel. This is better run outside
+docker (assuming you are on Linux)
+
 
 __Install Python dependencies__
 

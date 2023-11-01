@@ -6,7 +6,7 @@
 
 # 1. parse BGP paths
 echo "[+] Parsing BGP paths..."
-python uniquePath.py -i africa_rib.txt -p peeringdb_2_dump_2023_10_09.json
+python uniquePath.py -i africa_rib_cleaned.txt -p peeringdb_2_dump_2023_10_09.json
 printf "[+] Done parsing BGP paths...\n"
 
 # 2. run AS-Rank algorithm to bootstrap the TopoScope algorithm
