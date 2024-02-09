@@ -65,7 +65,7 @@ The ASes on each BGP path should be delimited by '|' on each line, for example, 
 __Parse downloaded BGP paths__
 
 ```sh
-$ python uniquePath.py -i=<aspaths file> -p=<peeringdb file>
+$ python3 uniquePath.py -i=<aspaths file> -p=<peeringdb file>
 # e.g. python uniquePath.py -i=aspaths_2019.txt -p=peeringdb_2019.json
 # Output is written to 'aspaths.txt'.
 ```
@@ -79,7 +79,7 @@ $ perl asrank.pl aspaths.txt > asrel.txt
 __Run Toposcope__ 
 
 ```sh
-$ python toposcope.py -o=<ASorg file> -p=<peeringdb file> -d=<temporary storage folder name>
+$ python3 toposcope.py -o=<ASorg file> -p=<peeringdb file> -d=<temporary storage folder name>
 #e.g. python toposcope.py -o=asorg_2019.txt -p=peeringdb_2019.json -d=tmp/
 # Output is written to 'asrel_toposcope.txt'.
 ```
@@ -99,7 +99,7 @@ The ASes on each BGP path should be delimited by '|' on each line, followed by '
 __Parse downloaded BGP paths__
 
 ```sh
-$ python cleanPrefix.py -i=<asprefix file> -p=<peeringdb file>
+$ python3 cleanPrefix.py -i=<asprefix file> -p=<peeringdb file>
 # e.g. python cleanPrefix.py -i=asprefix_2019.txt -p=peeringdb_2019.json
 # Output is written to 'fullVP.txt', 'aspaths0.txt', 'aspaths1.txt', 'asprefix0.txt', 'asprefix1.txt', 'chooseVP0.txt' and 'chooseVP1.txt'.
 ```
@@ -116,16 +116,16 @@ You can also use basic inference result of TopoScope instead of ASRank to finish
 __Find miss edges and choose ASes similar to full VPs__
 
 ```sh
-$ python getMissEdge.py
+$ python3 getMissEdge.py
 # Output is written to 'triplet_miss0.txt' and 'triplet_miss1.txt'.
-$ python chooseAS.py
+$ python3 chooseAS.py
 # Output is written to 'chooseAS.txt'.
 ```
 
 __Run Toposcope to find hidden links__ 
 
 ```sh
-$ python newlink.py -f=<prefix2AS file>
+$ python3 newlink.py -f=<prefix2AS file>
 # e.g. python newlink.py -f=pfx2as_2019.txt
 # Output is written to 'futher0.txt' and 'futher1.txt'.
 ```
@@ -133,7 +133,7 @@ $ python newlink.py -f=<prefix2AS file>
 __Infer AS relationships of hidden links__
 
 ```sh
-$ python linkRel.py
+$ python3 linkRel.py
 # Output is written to 'asrel_hidden.txt'
 ```
 
